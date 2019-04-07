@@ -11,6 +11,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField 'String', 'BASE_ENDPOINT', "\"\""
     }
     buildTypes {
         release {
@@ -30,6 +32,12 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+            returnDefaultValues = true
+        }
+    }
 }
 
 dependencies {
@@ -44,7 +52,7 @@ dependencies {
     implementation "com.android.support.constraint:constraint-layout:$versions.constraint_layout"
 
     //Unit test
-    androidTestImplementation "junit:junit:$versions.junit"
+    testImplementation "junit:junit:$versions.junit"
     androidTestImplementation "com.android.support.test:runner:$versions.test_runner"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$versions.espresso_core"
     testImplementation "org.mockito:mockito-all:$versions.mockito"
