@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="primaryColor" format="reference|color" />
+    <attr name="secondaryColor" format="reference|color" />
+    <attr name="actionColor" format="reference|color" />
+    <attr name="textColorPrimary" format="reference|color" />
+    <attr name="colorPrimaryRed" format="reference|color" />
+
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension|reference" />
+        <attr name="border_color" format="color|reference" />
+        <attr name="border_overlay" format="boolean" />>
+        <attr name="circle_background_color" format="color|reference" />
+    </declare-styleable>
+</resources>

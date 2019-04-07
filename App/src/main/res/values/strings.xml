@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Application</string>
+    <string name="title_about_activity">About</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="about_description">Base Android Application is a sample application that can be uses as a starting project.
+    This base application is made for Model-View-ViewModel architecture. This application defines a various dependencies or
+    libraries for head start.</string>
+    <string name="about_app_copyright">&#169; Manorath Chapagai | All rights reserved.</string>
+</resources>
