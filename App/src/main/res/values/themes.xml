@@ -25,5 +25,6 @@
         <item name="actionColor">@color/action</item>
         <item name="textColorPrimary">@color/dark_primary_text</item>
         <item name="colorPrimaryRed">@color/red</item>
+        <item name="darkLinkColor">@color/linkColor</item>
     </style>
 </resources>

@@ -27,7 +27,7 @@ import android.view.ViewOutlineProvider;
 
 import com.example.mchapagai.R;
 
-public class CircleImageView extends AppCompatImageView {
+public class MaterialCircleImageView extends AppCompatImageView {
 
     private static final ScaleType SCALE_TYPE = ScaleType.CENTER_CROP;
 
@@ -66,27 +66,27 @@ public class CircleImageView extends AppCompatImageView {
     private boolean borderOverlay;
     private boolean disableCircularTransformation;
 
-    public CircleImageView(Context context) {
+    public MaterialCircleImageView(Context context) {
         super(context);
         init();
     }
 
-    public CircleImageView(Context context, AttributeSet attrs) {
+    public MaterialCircleImageView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public CircleImageView(Context context, AttributeSet attrs, int defStyle) {
+    public MaterialCircleImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CircleImageView, defStyle,
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.MaterialCircleImageView, defStyle,
                 0);
 
-        borderWidth = a.getDimensionPixelSize(R.styleable.CircleImageView_border_width,
+        borderWidth = a.getDimensionPixelSize(R.styleable.MaterialCircleImageView_border_width,
                 DEFAULT_BORDER_WIDTH);
-        borderColor = a.getColor(R.styleable.CircleImageView_border_color, DEFAULT_BORDER_COLOR);
-        borderOverlay = a.getBoolean(R.styleable.CircleImageView_border_overlay,
+        borderColor = a.getColor(R.styleable.MaterialCircleImageView_border_color, DEFAULT_BORDER_COLOR);
+        borderOverlay = a.getBoolean(R.styleable.MaterialCircleImageView_border_overlay,
                 DEFAULT_BORDER_OVERLAY);
-        circleBackgroundColor = a.getColor(R.styleable.CircleImageView_circle_background_color,
+        circleBackgroundColor = a.getColor(R.styleable.MaterialCircleImageView_circle_background_color,
                 DEFAULT_CIRCLE_BACKGROUND_COLOR);
         a.recycle();
         init();

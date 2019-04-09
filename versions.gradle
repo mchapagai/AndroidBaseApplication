@@ -26,4 +26,5 @@ ext.versions = [
         leakcanary          : '1.6.2',
         butterknife         : '8.8.1',
         guava               : '24.1-android',
+        apache_commons      : '3.1',
 ]

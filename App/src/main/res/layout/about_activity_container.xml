@@ -58,7 +58,7 @@
                 app:layout_constraintStart_toStartOf="@+id/about_app_description"
                 app:layout_constraintTop_toBottomOf="@+id/about_app_description" />
 
-            <com.example.mchapagai.view.CircleImageView
+            <com.example.mchapagai.view.MaterialCircleImageView
                 android:id="@+id/circle_image_view"
                 android:layout_width="@dimen/margin_96dp"
                 android:layout_height="@dimen/margin_96dp"

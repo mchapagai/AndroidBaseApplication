@@ -5,11 +5,19 @@
     <attr name="actionColor" format="reference|color" />
     <attr name="textColorPrimary" format="reference|color" />
     <attr name="colorPrimaryRed" format="reference|color" />
+    <attr name="darkLinkColor" format="reference|color" />
 
-    <declare-styleable name="CircleImageView">
+    <declare-styleable name="MaterialCircleImageView">
         <attr name="border_width" format="dimension|reference" />
         <attr name="border_color" format="color|reference" />
         <attr name="border_overlay" format="boolean" />>
         <attr name="circle_background_color" format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="MaterialView">
+        <attr name="str" format="string" />
+        <attr name="dimension" format="dimension" />
+        <attr name="colorId" format="color" />
+        <attr name="drawableId" format="color|reference" />
     </declare-styleable>
 </resources>
