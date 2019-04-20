@@ -1,6 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion versions.compileSdk
@@ -88,7 +86,7 @@ dependencies {
     implementation "com.jakewharton:butterknife:$versions.butterknife"
     annotationProcessor "com.jakewharton:butterknife-compiler:$versions.butterknife"
 
-    // Kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+    implementation "android.arch.lifecycle:extensions:$versions.arch_lifecycle"
+    implementation "android.arch.lifecycle:runtime:$versions.arch_lifecycle"
+    annotationProcessor "android.arch.lifecycle:compiler:$versions.arch_lifecycle"
 }

@@ -55,23 +55,23 @@
             android:textColor="?attr/darkLinkColor"
             tools:text="Cancel"/>
 
-        <com.example.mchapagai.widget.CustomButton
+        <Button
             android:id="@+id/positive_button"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:paddingStart="@dimen/margin_32dp"
             android:textAlignment="gravity"
-            android:textColor="?attr/linkColor"
+            android:textColor="?attr/darkLinkColor"
             tools:text="OK"/>
 
-        <com.example.mchapagai.widget.CustomButton
+        <Button
             android:id="@+id/neutral_button"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:textAlignment="gravity"
-            android:textColor="?attr/linkColor"
+            android:textColor="?attr/darkLinkColor"
             android:visibility="gone"
             tools:text="Neutral"/>
 
