@@ -16,6 +16,6 @@ import dagger.android.support.AndroidSupportInjectionModule;
 )
 interface AppComponent extends AndroidInjector<BaseApplication> {
     @Component.Builder
-    abstract class Builder extends AndroidInjector.Builder<BaseApplication> {
+    abstract class Builder implements Factory<BaseApplication> {
     }
 }

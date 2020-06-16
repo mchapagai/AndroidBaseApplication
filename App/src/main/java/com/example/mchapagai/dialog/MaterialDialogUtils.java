@@ -1,7 +1,8 @@
 package com.example.mchapagai.dialog;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mchapagai.R;
 
