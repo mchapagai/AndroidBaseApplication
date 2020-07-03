@@ -21,7 +21,14 @@ android {
 
     lintOptions {
         abortOnError false
-        lintConfig file('lint.xml')
+        // If false, do not generate .xml version if the lint report
+        xmlReport false
+        // If true, generate an html report (with issues)
+        htmlReport true
+        // Optional path to report (default will be lint-results.html in the build dir)
+        htmlOutput file("lint-report.html")
+        disable 'AllowBackup'
+        // lintConfig file('lint.xml')
     }
     configurations.all {
         resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
