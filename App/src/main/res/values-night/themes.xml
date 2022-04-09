@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BaseTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">?attr/primaryColor</item>
+        <item name="colorPrimaryDark">?attr/primaryColor</item>
+        <item name="colorAccent">?attr/actionColor</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowSoftInputMode">stateAlwaysHidden</item>
+        <item name="android:fadeScrollbars">true</item>
+        <item name="android:statusBarColor">?attr/primaryColor</item>
+        <item name="android:actionBarDivider">@null</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+
+    <style name="AppTheme" parent="BaseTheme">
+        <item name="primaryColor">@color/primary</item>
+        <item name="secondaryColor">@color/secondary</item>
+        <item name="actionColor">@color/action</item>
+        <item name="textColorPrimary">@color/dark_primary_text</item>
+        <item name="colorPrimaryRed">@color/red</item>
+        <item name="darkLinkColor">@color/linkColor</item>
+    </style>
+</resources>

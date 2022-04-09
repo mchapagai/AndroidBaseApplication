@@ -1,5 +1,7 @@
 package com.example.mchapagai.injection;
 
+import com.example.mchapagai.base.BaseApplication;
+
 import javax.inject.Singleton;
 
 import dagger.Component;

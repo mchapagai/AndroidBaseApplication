@@ -3,8 +3,9 @@ package com.example.mchapagai.dialog;
 import android.content.Intent;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.LayoutRes;
+
+import androidx.annotation.DrawableRes;
+import androidx.annotation.LayoutRes;
 
 import java.io.Serializable;
 

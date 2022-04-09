@@ -9,9 +9,9 @@ public class TestDaggerSetupApplication extends DaggerApplication {
 
     @Override
     public AndroidInjector<DaggerApplication> applicationInjector() {
-        if (injector == null) {
-            injector = DaggerTestAppComponent.builder().create(this);
-        }
+//        if (injector == null) {
+//            injector = DaggerTestAppComponent.builder().create(this);
+//        }
 
         return injector;
     }

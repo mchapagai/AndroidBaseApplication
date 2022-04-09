@@ -1,6 +1,6 @@
 package com.example.mchapagai.viewModel;
 
-import android.arch.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModel;
 
 public class BaseViewModel extends ViewModel {
 }
