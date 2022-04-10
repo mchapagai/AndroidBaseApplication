@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
@@ -14,90 +13,152 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/content_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="@dimen/margin_8dp">
+            android:layout_margin="@dimen/margin_16dp">
 
             <TextView
-                android:id="@+id/about_app_name"
-                style="@style/ActionBar.Text"
-                android:layout_width="match_parent"
+                android:id="@+id/about_copyright"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_8dp"
                 android:layout_marginTop="@dimen/margin_8dp"
-                android:gravity="center_horizontal"
-                android:text="@string/app_name"
-                app:layout_constraintBottom_toTopOf="@+id/about_app_description"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/about_app_description"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/about_app_description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_8dp"
-                android:layout_marginTop="@dimen/margin_8dp"
-                android:text="@string/about_description"
-                app:layout_constraintBottom_toTopOf="@+id/app_copyright"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/about_app_name" />
-
-            <TextView
-                android:id="@+id/app_copyright"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_8dp"
-                android:layout_marginTop="@dimen/margin_8dp"
+                android:layout_marginBottom="@dimen/margin_16dp"
                 android:gravity="center_horizontal"
                 android:text="@string/about_app_copyright"
-                app:layout_constraintBottom_toTopOf="@+id/circle_image_view"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/about_app_description"
-                app:layout_constraintTop_toBottomOf="@+id/about_app_description" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <com.example.mchapagai.view.MaterialCircleImageView
                 android:id="@+id/circle_image_view"
                 android:layout_width="@dimen/margin_96dp"
                 android:layout_height="@dimen/margin_96dp"
-                android:layout_marginBottom="@dimen/margin_8dp"
                 android:layout_marginTop="@dimen/margin_8dp"
+                android:layout_marginBottom="@dimen/margin_8dp"
                 app:border_color="@color/dark_primary_text"
                 app:border_width="2dp"
                 app:circle_background_color="@color/dark_primary_text"
-                app:layout_constraintEnd_toEndOf="@+id/app_copyright"
-                app:layout_constraintStart_toStartOf="@+id/app_copyright"
-                app:layout_constraintTop_toBottomOf="@+id/app_copyright"
-                app:srcCompat="@drawable/icon_green" />
+                app:layout_constraintEnd_toEndOf="@+id/about_copyright"
+                app:layout_constraintStart_toStartOf="@+id/about_copyright"
+                app:layout_constraintTop_toBottomOf="@+id/about_copyright"
+                app:srcCompat="@drawable/icon_robot" />
+
+            <TextView
+                android:id="@+id/about_fork_me_on_github"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:gravity="center_horizontal"
+                android:text="@string/msg_about_fork_me_on_github"
+                app:layout_constraintBottom_toTopOf="@id/about_github_url"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/circle_image_view" />
+
+            <TextView
+                android:id="@+id/about_github_url"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:autoLink="web"
+                android:gravity="center_horizontal"
+                android:text="@string/msg_about_github_url"
+                app:layout_constraintBottom_toTopOf="@id/about_library_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/about_fork_me_on_github" />
+
 
             <View
-                android:id="@+id/view"
+                android:id="@+id/separator_view_contribute"
                 style="@style/HorizontalDivider"
-                android:layout_marginBottom="@dimen/margin_8dp"
-                android:layout_marginTop="@dimen/margin_8dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                app:layout_constraintBottom_toTopOf="@+id/contributor_recycler_view"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/circle_image_view" />
+                app:layout_constraintTop_toBottomOf="@+id/about_github_url" />
 
-            <LinearLayout
-                android:id="@+id/licenses"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/contributor_recycler_view"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:layout_marginEnd="@dimen/margin_16dp"
+                android:layout_marginBottom="@dimen/margin_16dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toTopOf="@+id/separator_view_contribute"
+                app:layout_constraintTop_toBottomOf="@+id/separator_view_contribute" />
+
+
+            <TextView
+                android:id="@+id/about_library_description"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view"
-                app:layout_constraintEnd_toEndOf="@+id/view"
-                android:orientation="vertical" />
+                android:gravity="center_horizontal"
+                android:text="@string/about_description"
+                app:layout_constraintBottom_toTopOf="@id/about_android_trademark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/contributor_recycler_view" />
 
-            <!--<android.support.design.widget.CoordinatorLayout
-                android:id="@+id/licenses"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/about_android_trademark"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8dp"
                 android:layout_marginBottom="@dimen/margin_16dp"
+                android:text="@string/msg_android_trademark"
+                app:layout_constraintBottom_toTopOf="@id/about_divider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/about_library_description" />
 
+            <View
+                android:id="@+id/about_divider"
+                style="@style/HorizontalDivider"
+                app:layout_constraintBottom_toTopOf="@id/about_license_header"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/about_android_trademark" />
 
-                 />-->
+            <TextView
+                android:id="@+id/about_license_header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:text="@string/license"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                app:layout_constraintBottom_toTopOf="@id/about_license"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/about_divider" />
+
+            <TextView
+                android:id="@+id/about_license"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:fitsSystemWindows="true"
+                android:text="@string/licesne_description"
+                app:layout_constraintBottom_toTopOf="@id/licenses_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/about_license_header" />
+
+            <LinearLayout
+                android:id="@+id/licenses_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:nestedScrollingEnabled="true"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/about_license" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

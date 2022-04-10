@@ -4,15 +4,10 @@
     <dimen name="margin_1dp">1dp</dimen>
     <dimen name="margin_8dp">8dp</dimen>
     <dimen name="margin_16dp">16dp</dimen>
-    <dimen name="margin_20dp">20dp</dimen>
-    <dimen name="margin_32dp">32dp</dimen>
     <dimen name="margin_48dp">48dp</dimen>
     <dimen name="margin_64dp">64dp</dimen>
     <dimen name="margin_96dp">96dp</dimen>
     <dimen name="margin_256dp">256dp</dimen>
-    <dimen name="backdrop_height">256dp</dimen>
 
     <!-- Text -->
-    <dimen name="default_small_text">14sp</dimen>
-    <dimen name="default_medium_text">18sp</dimen>
 </resources>

@@ -10,13 +10,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.RecyclerView
 import com.example.mchapagai.R
+import com.example.mchapagai.adapters.ContributorsAdapter
+import com.example.mchapagai.base.BaseActivity
+import com.example.mchapagai.utils.UiUtils
+import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import javax.annotation.Nullable
 
-class AboutActivity : AppCompatActivity() {
+class AboutActivity : BaseActivity() {
 
     override fun onCreate(@Nullable savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,12 +28,14 @@ class AboutActivity : AppCompatActivity() {
         setContentView(R.layout.about_activity_container)
         initViews()
         initLicenses()
+        loadContributors()
     }
 
     private fun initViews() {
         val toolbar = findViewById<Toolbar>(R.id.about_toolbar)
         val collapsingToolbar =
             findViewById<CollapsingToolbarLayout>(R.id.collapsing_toolbar_layout)
+        val appBarLayout = findViewById<AppBarLayout>(R.id.app_bar_layout)
 
         setSupportActionBar(toolbar)
         if (toolbar != null) {
@@ -37,12 +43,32 @@ class AboutActivity : AppCompatActivity() {
             supportActionBar?.setHomeButtonEnabled(true)
         }
 
+        // Implement addOnOffsetChangedListener to show CollapsingToolbarLayout Tile only when
+        // collapsed
+
+        appBarLayout.addOnOffsetChangedListener(object : AppBarLayout.OnOffsetChangedListener {
+            var isShown = true
+            var scrollRange = -1
+            override fun onOffsetChanged(appBarLayout: AppBarLayout, verticalOffset: Int) {
+                if (scrollRange == -1) {
+                    scrollRange = appBarLayout.totalScrollRange
+                }
+                if (scrollRange + verticalOffset == 0) {
+                    collapsingToolbar.title = getString(R.string.title_about_activity)
+                    isShown = true
+                } else if (isShown) {
+                    // There should be a space between double quote otherwise it won't work
+                    collapsingToolbar.title = " "
+                    isShown = false
+                }
+            }
+        })
+
         toolbar.setNavigationOnClickListener { onBackPressed() }
-        collapsingToolbar.title = getString(R.string.title_about_activity)
     }
 
     private fun initLicenses() {
-        val licensesLayout = findViewById<LinearLayout>(R.id.licenses)
+        val licensesLayout = findViewById<LinearLayout>(R.id.licenses_layout)
         val inflater = LayoutInflater.from(this)
         val softwareList = resources.getStringArray(R.array.software_list)
         val licenseList = resources.getStringArray(R.array.license_list)
@@ -55,12 +81,12 @@ class AboutActivity : AppCompatActivity() {
         }
     }
 
-    private fun createHeader(name: String): TextView? {
+    private fun createHeader(name: String): TextView {
         val s = "<big><b>$name</b></big>"
         return createHtmlText(s, 8)
     }
 
-    private fun createItemsText(vararg names: String): TextView? {
+    private fun createItemsText(vararg names: String): TextView {
         val s = StringBuilder()
         for (name in names) {
             if (s.isNotEmpty()) {
@@ -72,7 +98,7 @@ class AboutActivity : AppCompatActivity() {
         return createHtmlText(s.toString(), 8)
     }
 
-    private fun createHtmlText(s: String): TextView? {
+    private fun createHtmlText(s: String): TextView {
         return createHtmlText(s, 8)
     }
 
@@ -97,6 +123,11 @@ class AboutActivity : AppCompatActivity() {
 
     private fun createDivider(inflater: LayoutInflater, parent: ViewGroup): View? {
         return inflater.inflate(R.layout.divider, parent, false)
+    }
+
+    private fun loadContributors() {
+        val recyclerView = findViewById<RecyclerView>(R.id.contributor_recycler_view)
+        recyclerView.adapter = ContributorsAdapter(UiUtils.rawContributors(this))
     }
 
     override fun onBackPressed() {

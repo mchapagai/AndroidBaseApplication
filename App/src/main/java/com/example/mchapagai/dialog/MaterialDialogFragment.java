@@ -73,7 +73,7 @@ public class MaterialDialogFragment extends DialogFragment {
     }
 
     @Override
-    public void onCancel(DialogInterface dialog) {
+    public void onCancel(@NonNull DialogInterface dialog) {
         super.onCancel(dialog);
         String tag = getTag();
         if (onDialogClickListener != null) {

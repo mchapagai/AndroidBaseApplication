@@ -19,7 +19,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServiceFactory {
     private static Retrofit retrofit = null;
-    private static OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+    private static final OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
 
     /**
      * Creates a service using the base url

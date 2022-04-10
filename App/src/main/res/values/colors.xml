@@ -7,17 +7,10 @@
     <color name="action">#1CA8F4</color>
 
     <!-- Light Theme Color -->
-    <color name="light_primary">#FFFFFF</color>
-    <color name="light_primary_text">#000000</color>
-    <color name="light_secondary_text">#BCC1C4</color>
 
     <!--Dark Theme Color-->
-    <color name="dark_primary">#000000</color>
-    <color name="dark_secondary">#2C2C2C</color>
     <color name="dark_primary_text">#FFFFFF</color>
-    <color name="dark_secondary_text">#CCCCCC</color>
 
     <color name="linkColor">#FCC428</color>
     <color name="red">#ffff0000</color>
-    <color name="grey">#cccccc</color>
 </resources>

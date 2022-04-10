@@ -5,9 +5,4 @@
         <item name="android:background">?attr/colorPrimaryRed</item>
     </style>
 
-    <style name="ActionBar.Text" parent="@android:style/TextAppearance.Material.Widget.ActionBar.Title">
-        <item name="android:textColor">?attr/colorPrimaryRed</item>
-        <item name="android:textSize">@dimen/default_medium_text</item>
-    </style>
-
 </resources>
