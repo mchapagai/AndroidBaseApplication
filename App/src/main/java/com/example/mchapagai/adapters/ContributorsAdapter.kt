@@ -14,7 +14,7 @@ class ContributorsAdapter(private val contributorItems: List<Contributors>) :
     RecyclerView.Adapter<ContributorsAdapter.ContributorsViewHolder>() {
 
     /**
-     * Called when RecyclerView needs a new [ViewHolder] of the given type to represent
+     * Called when RecyclerView needs a new [ContributorsViewHolder] of the given type to represent
      * an item.
      *
      *
@@ -43,7 +43,7 @@ class ContributorsAdapter(private val contributorItems: List<Contributors>) :
 
     /**
      * Called by RecyclerView to display the data at the specified position. This method should
-     * update the contents of the [ViewHolder.itemView] to reflect the item at the given
+     * update the contents of the [ContributorsViewHolder.itemView] to reflect the item at the given
      * position.
      *
      *
@@ -52,7 +52,7 @@ class ContributorsAdapter(private val contributorItems: List<Contributors>) :
      * invalidated or the new position cannot be determined. For this reason, you should only
      * use the `position` parameter while acquiring the related data item inside
      * this method and should not keep a copy of it. If you need the position of an item later
-     * on (e.g. in a click listener), use [ViewHolder.getBindingAdapterPosition] which
+     * on (e.g. in a click listener), use [ContributorsViewHolder.getBindingAdapterPosition] which
      * will have the updated adapter position.
      *
      * Override [.onBindViewHolder] instead if Adapter can
